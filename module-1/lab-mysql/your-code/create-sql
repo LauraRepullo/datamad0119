@@ -1,0 +1,5 @@
+USE lab_mysql
+mysql> CREATE TABLE cars (VIN INT, Manufacturer VARCHAR(45), Model VARCHAR(45), Year DATE, Color VARCHAR(45), INVOICES_idINVOICES VARCHAR(45), CUSTOMERS_idCUSTOMERS INT, SALESPERSON_idSALESPERSONS VARCHAR(45)) ;
+mysql> CREATE TABLE customers (idCUSTOMERS INT, Name_Customer VARCHAR(45), Phone INT, Adress VARCHAR(100), City VARCHAR(45), ZIP VARCHAR(45)) ;
+mysql> CREATE TABLE salesperson (name_salesperson VARCHAR(45), surname_salesperson VARCHAR(45), store VARCHAR(45), city VARCHAR(45), country VARCHAR(45), idSalesperson VARCHAR(45)) ;
+mysql> CREATE TABLE invoices (Date VARCHAR(45), idInvoices VARCHAR(45), salesperson_idSalespersons VARCHAR(45)) ;
