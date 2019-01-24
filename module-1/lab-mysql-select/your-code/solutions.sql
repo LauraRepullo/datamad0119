@@ -31,3 +31,15 @@ ON titleauthor.title_id=sales.title_id
 GROUP BY authors.au_id
 ORDER BY SUM(sales.qty) DESC
 LIMIT 3 ;
+
+#challenge 4
+
+SELECT authors.au_id AS 'AUTHOR ID', authors.au_lname AS 'LAST NAME', authors.au_fname AS 'FIRST NAME', SUM(sales.qty) AS 'TOTAL'
+FROM authors
+LEFT JOIN titleauthor
+ON titleauthor.au_id=authors.au_id
+LEFT JOIN sales
+ON titleauthor.title_id=sales.title_id
+GROUP BY authors.au_id
+ORDER BY SUM(sales.qty) DESC
+
