@@ -1,0 +1,31 @@
+#CHALLENGE1
+#STEP1
+SELECT titles.title_id AS 'TITLE ID',
+authors.au_id AS 'ID AUTHOR', 
+titles.price * sales.qty * titles.royalty / 100 * titleauthor.royaltyper / 100 AS 'SALES_ROYALTY' 
+FROM titles
+LEFT JOIN sales
+ON sales.title_id = titles.title_id
+LEFT JOIN titleauthor
+ON titleauthor.title_id = titles.title_id
+LEFT JOIN authors
+ON authors.au_id=titleauthor.au_id
+
+#STEP2
+
+SELECT title_id as 'TITLE ID',
+au_id AS 'AUTHOR ID',
+SUM(SALES_ROYALTY) AS 'AGGREGATED_ROYALTY'
+FROM (SELECT titles.title_id,
+authors.au_id, 
+titles.price * sales.qty * titles.royalty / 100 * titleauthor.royaltyper / 100 AS 'SALES_ROYALTY' 
+FROM titles
+LEFT JOIN sales
+ON sales.title_id = titles.title_id
+LEFT JOIN titleauthor
+ON titleauthor.title_id = titles.title_id
+LEFT JOIN authors
+ON authors.au_id=titleauthor.au_id) summary
+group by title_id, au_id
+
+
