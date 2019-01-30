@@ -1,7 +1,11 @@
 
-PANDAS PROYECT
 
-       Una vez importada la Data Set relativa a los ataques de tiburones registrados en todo el mundo, he llevado a cabo algunas operaciones para depurar y organizar los datos, para un mejor tratamiento y una correcta interpretacion de los mismos.
+# PANDAS PROYECT
+
+   ## Proyecto SHARKATTACK
+   
+
+        Una vez importada la Data Set relativa a los ataques de tiburones registrados en todo el mundo, he llevado a cabo algunas operaciones para depurar y organizar los datos, para un mejor tratamiento y una correcta interpretacion de los mismos.
 
        He localizado las columnas que más valores nulos tenian, y he eliminado aquellas que tenian mas de 5.000 (el dataset cuenta con 5.992 filas en total)
 
