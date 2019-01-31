@@ -38,30 +38,22 @@ n = input('How many random strings to generate? ')
 print(BatchStringGenerator(int(n), int(a), int(b)))
 
 #nuestro resultado:
-import random
+import random as rd
 import sys
 
-def RandomStringGenerator(l=12, a=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9']):
-    p = 0
-    s = ''
-    while p<l:
-        s += random.choice(a)
-        p += 1
-    return s
+def RandomStringGenerator(l, a=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9']):
+    return ''.join(rd.sample(a,l))
+
+print(RandomStringGenerator(3))    
 
 def BatchStringGenerator(n, a=8, b=12):
-    r = []
-    for i in range(n):
-        c = None
-        if a < b :
-            c = random.choice(range(a, b))
-        elif a == b:
-            c = a
-        else:
-            sys.exit('Incorrect min and max string lengths. Try again.')
-        r.append(RandomStringGenerator(c))
-    return r
-    
+        if a>b:
+          sys.exit('Incorrect min and max string lengths. Try again.')
+        c = rd.choice(range(a, b)) if a < b else b
+        return[RandomStringGenerator(c) for _ in range(n)] 
+
 a = input('Enter minimum string length: ')
 b = input('Enter maximum string length: ')
 n = input('How many random strings to generate? ')
+
+print(BatchStringGenerator(int(n), int(a), int(b)))
