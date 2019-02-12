@@ -6,14 +6,14 @@
 
 
 
-       ## El objetivo del proyecto es obtener información a través de Web Scraping y consultas a una API, y agregar la información.
+   #### El objetivo del proyecto es obtener información a través de Web Scraping y consultas a una API, y agregar la información.
 
 
         Para ello, he seguido los siguientes pasos:
         
         1) Importamos las librerias que vamos a emplear en los distintos procesos: requests, Beautifulsoup, pandas, etc...
         
-        2) En mi caso empezaré el ejercicio haciendo Web Scraping en distintas URL de la web www.rollingstone.com: localizamos distitas listas de canciones y sus autores, y hacemos las peticiones a traves de requests.
+        2) En mi caso empezaré el ejercicio haciendo Web Scraping en distintas URL de la web < https:\\www.rollingstone.com > localizamos distitas listas de canciones y sus autores, y hacemos las peticiones a traves de requests.
         
         3) Con BeautifulSoup haremos que la informacion se nos muestre más estructurada. En el HTML, buscamos los nombres de las canciones y de sus autores, y creamos una lista
         
